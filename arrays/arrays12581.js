@@ -27,7 +27,7 @@ alert(styles);
 styles[Math.floor(styles.length / 2)] = "Классика";
 alert(styles);
 
-alert(styles.shift(styles[0]));
+alert(styles.shift());
 alert(styles);
 
 styles.unshift("Рэп", "Регги");
