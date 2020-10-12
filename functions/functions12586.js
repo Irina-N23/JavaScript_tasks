@@ -17,17 +17,21 @@ alert(countSumOfTwoNumbers(105, 11));
 const VALID_NAME = "John";
 let userName = prompt("Just input your name!", "")
 
-let greetUser = (userName === VALID_NAME) ?
-    () => alert(`Hello, ${userName}!`) :
-    () => alert(`Name "${userName}" is not valid.`);
+function greetUser(chosenUserName) {
+    if (chosenUserName === VALID_NAME) {
+        alert(`Hello, ${userName}!`);
+    } else {
+        alert(`Name "${userName}" is not valid.`);
+    }
+}
 
-greetUser();
+greetUser(userName);
 
 
 
 // 3. Create of calculating the type of argument and output to the console.
  function logTypeOfArgument(argument) {
-    console.log(typeof argument);
+    return typeof argument;
  }
 
 logTypeOfArgument(true);
