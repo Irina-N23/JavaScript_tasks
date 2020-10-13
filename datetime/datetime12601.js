@@ -3,7 +3,7 @@
 const currentDate = new Date();
 
 // 1. Get the current date, print to the console:
-console.log(`Current date: ${currentDate.getDate()}.`);
+console.log(`Current date: ${currentDate}.`);
 
 // 2. Get the day, month and year of the current date and separately output to the console:
 console.log(`Current date: ${currentDate.getDate()}.`);
