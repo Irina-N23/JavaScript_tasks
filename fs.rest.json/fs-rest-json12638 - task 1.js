@@ -5,24 +5,23 @@ function getFileContent(file) {
     return fs.readFileSync(file, "utf8");
 }
 
-function getEvenStringsFromFile(fileContent) {
-    const arrayOfStrings = fileContent.split("\n");
-    let evenStrings = "";
+function getEvenLinesFromFile(fileContent) {
+    const arrayOfLines = fileContent.split("\n");
+    let evenLines = "";
 
-    for (let i = 0; i < arrayOfStrings.length; i++) {
-        if (i % 2 === 0) {
-            evenStrings += arrayOfStrings[i] + "\n";
+    for (let i = 0; i < arrayOfLines.length; i++) {
+        if (i % 2 !== 0) {    // lines are counted from 1 (not from 0)
+            evenLines += arrayOfLines[i] + " ";
         }
     }
-    return evenStrings;
+    return evenLines;
 }
 
-function printEvenStringsToConsole(fileToProcess) {
+function printEvenLinesToConsole(fileToProcess) {
     const receivedFileContent = getFileContent(fileToProcess);
-
-    console.log("Here are even strings only:\n\n"
-                        + getEvenStringsFromFile(receivedFileContent));
+    
+    console.log(getEvenLinesFromFile(receivedFileContent));
 }
 
 
-printEvenStringsToConsole("fs.rest.json\\resources\\fileToRead (task 1).txt");
+printEvenLinesToConsole("fs.rest.json\\resources\\task 1\\text.txt");
