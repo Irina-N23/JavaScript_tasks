@@ -1,0 +1,21 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "created for tasks 'NodeJS'",
+  "main": "index.js",
+  "scripts": {
+    "prescript": "echo \"You are about to have a look at a logged message.\"",
+    "script": "node index.js",
+    "postscript": "echo \"You have already seen that message. Just implement what had been written!\"",
+    "test": "echo \"Error: no test specified\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yarg": "^1.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "yargs": "^16.0.3"
+  }
+}
