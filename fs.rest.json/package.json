@@ -1,0 +1,15 @@
+{
+  "name": "fs.rest.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fs-rest-json12638 - task 4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
