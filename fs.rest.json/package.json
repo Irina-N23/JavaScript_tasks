@@ -1,0 +1,27 @@
+{
+  "name": "fs.rest.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fs-rest-json12638 - task 4.js",
+  "scripts": {
+    "preadd": "echo \"Starting To-Do List app...\"",
+    "prelist": "echo \"Starting To-Do List app...\"",
+    "preread": "echo \"Starting To-Do List app...\"",
+    "preremove": "echo \"Starting To-Do List app...\"",
+    "add": "node \"fs-rest-json12638 - task 5\"\\runner.js add",
+    "list": "node \"fs-rest-json12638 - task 5\"\\runner.js list",
+    "read": "node \"fs-rest-json12638 - task 5\"\\runner.js read",
+    "remove": "node \"fs-rest-json12638 - task 5\"\\runner.js remove",
+    "postadd": "echo \"Completing To-Do List app...\"",
+    "postlist": "echo \"Completing To-Do List app...\"",
+    "postread": "echo \"Completing To-Do List app...\"",
+    "postremove": "echo \"Completing To-Do List app...\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "node-fetch": "^2.6.1",
+    "yargs": "^16.1.0"
+  }
+}
