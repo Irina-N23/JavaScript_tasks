@@ -1,0 +1,36 @@
+{
+  "name": "unit-testing-frameworks",
+  "version": "1.0.0",
+  "description": "\"a simple unit testing project using mocha\"",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm run test"
+  },
+  "keywords": [
+    "mocha",
+    "unit",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.12.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^8.2.0",
+    "mochawesome": "^6.1.1",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "reporter": "html",
+    "check-coverage": true,
+    "branches": 40,
+    "lines": 100,
+    "functions": 80
+  }
+}
