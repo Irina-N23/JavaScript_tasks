@@ -2,7 +2,7 @@
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
 const {expect} = require("chai");
-const TutBy = require("../../website/TutBy");
+const TutBy = require("../../website-locators/TutBy");
 
 let driver = new Builder().forBrowser("chrome").build();
 let tut = new TutBy();
