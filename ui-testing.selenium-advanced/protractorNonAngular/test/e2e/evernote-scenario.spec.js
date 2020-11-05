@@ -1,7 +1,7 @@
 "use strict";
 
 const EverNoteLocators = require("../../websiteLocators/evernote-locators");
-const JavaScriptUtilities = require("../../utilities/javascript-utilities")
+const JavaScriptUtilities = require("../../utilities/javascript-utilities");
 const credentials = require("./../../user-credentials.json");
 const {browser, Key} = require("protractor");
 
@@ -22,7 +22,8 @@ describe("An Evernote scenario", () => {
 
 
     it("should log in to user's account", () => {
-        utilities.clickOnElementLocated(evernote.LOGIN_BUTTON)
+        browser.findElement(evernote.LOGIN_BUTTON)
+        .then(button => browser.actions().click(button).perform())
         .then(() => utilities.sendKeysToElementLocated(evernote
                         .EMAIL_OR_USERNAME_FIELD, credentials.email, Key.ENTER))
         .then(() => utilities.sendKeysToElementLocated(evernote
@@ -38,7 +39,11 @@ describe("An Evernote scenario", () => {
                                               .SEARCH_FIELD, "To-Do", Key.ENTER)
         .then(() => utilities.getTextFromElementLocated(evernote
                                                                .SEARCH_RESULTS))
-        .then(searchResults => expect(searchResults).toBe("1 note found"))
+        .then(searchResults => {
+            browser.executeScript("console.log(`Search results are "
+                                    + "\"${arguments[0]}\".`);", searchResults);
+            expect(searchResults).toBe("1 note found");
+        });
     });
 
 
@@ -48,7 +53,7 @@ describe("An Evernote scenario", () => {
         .then(() => utilities.clickOnElementLocated(evernote.TOMORROW_FIELD))
         .then(() => browser.isElementPresent(evernote.IS_DATA_CHECKED))
         .then(isPresent => expect(isPresent).toBe(true))
-        .then(() => browser.switchTo().frame(null))
+        .then(() => browser.switchTo().frame(null));
     });
 
 
@@ -57,6 +62,6 @@ describe("An Evernote scenario", () => {
         .then(() => utilities.sendKeysToElementLocated(evernote
                                                     .TOMORROW_FIELD, "meeting!"))
         .then(() => utilities.getTextFromElementLocated(evernote.TOMORROW_FIELD))
-        .then(newText => expect(newText).toEqual("meeting!"))
+        .then(newText => expect(newText).toEqual("meeting!"));
     });
 });

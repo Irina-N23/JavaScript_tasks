@@ -1,7 +1,7 @@
 "use strict";
 
 const {browser, element} = require("protractor");
-const customConditions = require("./custom-conditions")
+const customConditions = require("./custom-conditions");
 const EverNoteElements = require("../websiteLocators/evernote-locators");
 const editorIFrame = new EverNoteElements().EDITOR_IFRAME;
 
@@ -11,7 +11,9 @@ class JavaScriptUtilities {
 
     async clickOnElementLocated(elementLocator) {
         return customConditions.waitForVisiblityOfElementLocated(elementLocator)
-            .then(() => browser.findElement(elementLocator).click());
+            .then(() => browser.findElement(elementLocator))
+            .then(element => browser.actions().mouseDown(element).mouseUp()
+                                                                    .perform());
     }
 
 
@@ -27,7 +29,8 @@ class JavaScriptUtilities {
 
     async switchToEditorIFrame() {
         return customConditions.waitForVisiblityOfElementLocated(editorIFrame)
-            .then(() => browser.switchTo().frame(element(editorIFrame).getWebElement()));
+            .then(() => browser.switchTo().frame(element(editorIFrame)
+                                                             .getWebElement()));
     }
 
 

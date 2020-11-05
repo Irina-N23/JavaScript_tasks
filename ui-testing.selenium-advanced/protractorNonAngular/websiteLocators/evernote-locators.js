@@ -5,7 +5,6 @@ class EverNoteLocators {
     constructor() {
         this.HOME_URL = "https://evernote.com/";
 
-
         this.LOGIN_BUTTON = by.xpath("//div[@class='top']//a[text()='Log In']");
         this.EMAIL_OR_USERNAME_FIELD = by.css("#username");
         this.PASSWORD_FIELD = by.css("#password");
