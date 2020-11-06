@@ -8,17 +8,16 @@ const EC = protractor.ExpectedConditions;
 
 
 describe("An Evernote scenario", () => {
-    afterAll(() => browser.quit());
+    afterAll(() => browser.close());
 
-    it("should open Evernote homepage", (done) => {
+    it("should open Evernote homepage", () => {
         browser.get(evernote.HOME_URL, 30000)
         .then(() => expect(browser.getTitle())
-                                .toContain("Organize Your Notes with Evernote"))
-        .then(() => done());
+                                .toContain("Organize Your Notes with Evernote"));
     });
 
 
-    it("should log in to user's account", (done) => {
+    it("should log in to user's account", () => {
         browser.findElement(evernote.LOGIN_BUTTON).click()
         .then(() => browser.findElement(evernote.EMAIL_OR_USERNAME_FIELD))
         .then(emailField => {
@@ -35,22 +34,20 @@ describe("An Evernote scenario", () => {
         .then(() => browser.wait(EC
                      .visibilityOf(element(evernote.AUTHORIZED_EMAIL)), 120000))
         .then(() => browser.findElement(evernote.AUTHORIZED_EMAIL).getText())
-        .then(text => expect(text).toEqual(credentials.email))
-        .then(() => done());
+        .then(text => expect(text).toEqual(credentials.email));
     });
 
 
-    it("should find a chosen note", (done) => {
+    it("should find a chosen note", () => {
         browser.findElement(evernote.SEARCH_FIELD).sendKeys("To-Do", Key.ENTER)
         .then(() => browser.wait(EC
                         .visibilityOf(element(evernote.SEARCH_RESULTS)), 30000))
         .then(() => browser.findElement(evernote.SEARCH_RESULTS).getText())
-        .then(searchResults => expect(searchResults).toBe("1 note found"))
-        .then(() => done());
+        .then(searchResults => expect(searchResults).toBe("1 note found"));
     });
 
 
-    it("should mark today's task as done", (done) => {
+    it("should mark today's task as done", () => {
         browser.wait(EC.visibilityOf(evernote.EDITOR_IFRAME), 30000)
         .then(() => browser.switchTo()
                                .frame((evernote.EDITOR_IFRAME).getWebElement()))
@@ -58,21 +55,19 @@ describe("An Evernote scenario", () => {
         .then(() => browser.findElement(evernote.TOMORROW_FIELD).click())
         .then(() => browser.isElementPresent(evernote.IS_DATA_CHECKED))
         .then(isPresent => expect(isPresent).toBe(true))
-        .then(() => browser.switchTo().defaultContent())
-        .then(() => done());
     });
 
 
-    it("should write a todo for tomorrow applying italic", (done) => {
-        browser.wait(EC.visibilityOf(element(evernote.ITALIC_TEXT_BUTTON)), 30000)
-        .then(() => browser.findElement(evernote.ITALIC_TEXT_BUTTON).click())
-        .then(() => browser.switchTo()
-                               .frame((evernote.EDITOR_IFRAME).getWebElement()))
-        .then(() => browser.findElement(evernote.TOMORROW_FIELD).clear())
-        .then(() => browser.findElement(evernote.TOMORROW_FIELD)
-                                                           .sendKeys("meeting"))
+    it("should write a todo for tomorrow applying italic", () => {
+        browser.findElement(evernote.TOMORROW_FIELD)
+        .then(tomorrowField => {
+            tomorrowField.clear();
+            tomorrowField.sendKeys("meeting");
+            tomorrowField.sendKeys(Key.chord(Key.CONTROL, Key.SHIFT,
+                                             Key.ARROW_LEFT));
+            tomorrowField.sendKeys(Key.chord(Key.CONTROL, "i"));
+        })
         .then(() => expect(evernote.CHANGED_TOMORROW_FIELD
-                                                 .getText()).toEqual("meeting"))
-        .then(() => done());
+                                                .getText()).toEqual("meeting"));
     });
 });

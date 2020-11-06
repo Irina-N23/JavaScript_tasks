@@ -17,7 +17,6 @@ class EverNoteElements {
         this.IS_DATA_CHECKED = by.xpath("//li[@data-checked='true']");
         this.TOMORROW_FIELD = by.xpath("//b[text()='Tomorrow']/../"
                               + "following-sibling::ul[1]//div[@class='para']");
-        this.ITALIC_TEXT_BUTTON = by.css("#qa-ITALIC_TEXT_BTN > svg");
         this.CHANGED_TOMORROW_FIELD = element(by.xpath("//b[text()='Tomorrow']"
                        + "/../following-sibling::ul[1]//div[@class='para']/i"));
     }
