@@ -7,8 +7,8 @@ class TutBy {
         this.CURRENCY_CONVERTER_LINK = "//td/a[text()='Конвертер валют']";
         this.CURRENCY_CONVERTER_HEADER = "h1";
         this.ADD_CURRENCY_BUTTON = "//span[text()='Добавить валюту']";
-        this.CURRENCY_INPUT_FIELD = "//div[contains(@class,'dropup open')]"
-                                           + "//input[contains(@class,'form')]";
+        this.CURRENCY_INPUT_FIELD = "//div[contains(@class,'small open')]"
+                                    + "//input";
         this.CHF_BUTTON = "#select_currency_CHF > div > button";
         this.CHF_INPUT_FIELD = "input7";
         this.BYN_INPUT_FIELD = "//div[@class='input-holder CWA']"
