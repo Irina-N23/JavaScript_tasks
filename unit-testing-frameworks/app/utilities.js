@@ -1,6 +1,6 @@
 "use strict";
 
-function isArrayComposedOfNumbers(array) {
+module.exports.isArrayComposedOfNumbers = function (array) {
     if (array.length === 0) {
         throw new Error("(!) No arguments have been inputted.\n")
     }
@@ -10,8 +10,7 @@ function isArrayComposedOfNumbers(array) {
     if (isNumbers) {
         return true;
     } else {
-        throw new TypeError("(!) Incorrect type of parameters: the type must be \"number\".\n");
+        throw new TypeError("(!) Incorrect type of parameters:"
+                                        + " the type must be \"number\".\n");
     }
 }
-
-module.exports.isArrayComposedOfNumbers = isArrayComposedOfNumbers;

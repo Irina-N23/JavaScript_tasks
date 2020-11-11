@@ -25,7 +25,7 @@ describe("method \"multiply()\": negative scenarios", function() {
     afterEach(() => calculator = null);
 
     it("must throw an error if arguments have not been inputted",
-        () => expect(calculator.multiply.bind())
+        () => expect(() => calculator.multiply())
                       .to.throw(Error, "(!) No arguments have been inputted.\n"));
 
     it("must throw a type error if inputted arguments are not numbers",
