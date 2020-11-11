@@ -1,6 +1,19 @@
+# Logs:
 *.log
+
+# Dependency directories:
 node_modules
-.eslintignore
-.eslintrc
+
+# Coverage tools:
 coverage
 .nyc_output
+
+# Eslint files:
+.eslintignore
+.eslintrc.json
+
+# VS Code:
+.vscode
+
+# Mocha reports:
+mochawesome-report
