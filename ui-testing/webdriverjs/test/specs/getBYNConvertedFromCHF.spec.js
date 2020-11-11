@@ -10,7 +10,7 @@ let tut = new TutBy();
 
 describe("Making a conversion from CHF to BYN", function() {
     before(() => {
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(1920, 1080);
         driver.manage().deleteAllCookies();
     });
 
