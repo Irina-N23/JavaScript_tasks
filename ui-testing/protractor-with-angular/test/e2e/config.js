@@ -1,6 +1,6 @@
 "use strict";
 
-const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+const {SpecReporter} = require('jasmine-spec-reporter');
 
 exports.config = {
     capabilities: {
@@ -18,7 +18,7 @@ exports.config = {
 
     onPrepare: () => {
         browser.ignoreSynchronization = false;
-        browser.manage().window().maximize();
+        browser.manage().window().setSize(1920, 1080);
 
         jasmine.getEnv().addReporter(
             new SpecReporter({
