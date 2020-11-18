@@ -1,0 +1,33 @@
+{
+  "name": "ui-testing",
+  "version": "1.0.0",
+  "description": "a simple UI testing project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "update": "webdriver-manager update",
+    "start": "webdriver-manager start"
+  },
+  "keywords": [
+    "ui-automation",
+    "testing",
+    "webdriverjs",
+    "protractor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.12.1",
+    "eslint-config-google": "^0.14.0",
+    "jasmine": "^3.6.3",
+    "jasmine-spec-reporter": "^6.0.0",
+    "mocha": "^8.2.0",
+    "mochawesome": "^6.1.1",
+    "protractor": "^7.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "mocha": {
+    "timeout": 300000
+  }
+}
