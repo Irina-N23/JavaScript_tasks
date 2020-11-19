@@ -35,7 +35,7 @@ exports.config = {
                     displayPending: false,
                     displayDuration: true,
                 },
-            }),
+            })
         );
     }
 }

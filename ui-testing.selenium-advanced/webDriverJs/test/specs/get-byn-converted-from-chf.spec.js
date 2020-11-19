@@ -21,9 +21,9 @@ describe("Making a conversion from CHF to BYN", () => {
 
 
     it("should open Tut.by homepage", async () => {
-        await driver.get(tut.HOME_URL)
-        await customCondition.waitForjQueryAJAXsCompleted()
-        driver.executeScript("return document.URL;")
+        await driver.get(tut.HOME_URL);
+        await customCondition.waitForjQueryAJAXsCompleted();
+        await driver.executeScript("return document.URL;")
         .then(url => expect(url).to.be.eql(tut.HOME_URL))
     });
 
